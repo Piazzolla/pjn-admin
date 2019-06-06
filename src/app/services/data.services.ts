@@ -12,9 +12,11 @@ export class DataService{
 
     
     public URL_DEPENDENCIA_ALL = "URL_DEPENDENCIA_ALL";
+    public URL_DEPENDENCIA_ID = "URL_DEPENDENCIA_ID";
 
     https = [
-        {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"}
+        {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"},
+        {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"}
 
     ]
 
