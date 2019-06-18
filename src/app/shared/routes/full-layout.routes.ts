@@ -11,6 +11,10 @@ export const Full_ROUTES: Routes = [
   {
      path: 'dependencia',
      loadChildren: './pages/guia-judicial/guiajudicial.module#GuiaJudicialModule'
+   },
+     {
+     path: 'aviso',
+     loadChildren: './pages/avisos/avisos.module#AvisosModule'
    }
 
 ];

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ListadoDependenciasComponent } from './Listado/listado-dependencias.component';
+import { ListadoAvisosComponent } from './listado/listado-avisos.component';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: 'listado',
-        component: ListadoDependenciasComponent,
+        component: ListadoAvisosComponent,
         data: {
           title: 'Listado de Avisos'
         }
@@ -22,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class GuiaJudicialRoutingModule { }
+export class AvisosRoutingModule { }
