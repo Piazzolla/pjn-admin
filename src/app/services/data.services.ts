@@ -13,6 +13,7 @@ export class DataService{
     
     public URL_DEPENDENCIA_ALL = "URL_DEPENDENCIA_ALL";
     public URL_DEPENDENCIA_ID = "URL_DEPENDENCIA_ID";
+    public URL_AVISO_ALL = "URL_AVISO_ALL";
 
     https = [
         {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"},

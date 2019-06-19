@@ -9,7 +9,8 @@ export const ROUTES: RouteInfo[] = [
         ]
     },
     {
-        path: '', title: 'Novedades', icon: 'ft-box', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: [
+        path: '', title: 'Avisos', icon: 'ft-box', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: [
+          { path: '/aviso/listado', title: 'Listado de Avisos ', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
         ]
     },
 
