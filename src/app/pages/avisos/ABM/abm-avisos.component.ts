@@ -12,11 +12,11 @@ declare var require: any;
 // shared/data/company.json
 @Component({
     selector: 'aviso-abm',
-    templateUrl: './abm-aviso.component.html',
-    styleUrls: ['./abm-aviso.component.scss']
+    templateUrl: './abm-avisos.component.html',
+    styleUrls: ['./abm-avisos.component.scss']
 })
 
-export class AbmAvisoComponent {
+export class AbmAvisosComponent {
   data: any; 
   id: string;
   loaded: boolean = false; 

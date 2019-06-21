@@ -19,7 +19,7 @@ export class DataService{
 
     https = [
         {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"},
-        {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"}
+        {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"},
         {name: "URL_AVISO_ALL", url: "aviso/all", httpOperation: "get"},
         {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"}
 
