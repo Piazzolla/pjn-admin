@@ -14,10 +14,14 @@ export class DataService{
     public URL_DEPENDENCIA_ALL = "URL_DEPENDENCIA_ALL";
     public URL_DEPENDENCIA_ID = "URL_DEPENDENCIA_ID";
     public URL_AVISO_ALL = "URL_AVISO_ALL";
+    public URL_AVISO_ID = "URL_AVISO_ID";
+ 
 
     https = [
         {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"},
         {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"}
+        {name: "URL_AVISO_ALL", url: "aviso/all", httpOperation: "get"},
+        {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"}
 
     ]
 
