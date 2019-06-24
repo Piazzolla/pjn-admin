@@ -39,8 +39,8 @@ export class ListadoAvisosComponent {
 
     this.Columns = [
                     {"name": "id", "label": "id", "allowEdit": false },
-                    {"name": "aviso.titulo", "label": "titulo", "allowEdit": false},
-                    {"name": "descripcion", "label": "Descripcion", "allowEdit": false},
+                    {"name": "nombre", "label": "Titulo", "allowEdit": false},
+                    {"name": "cuerpo", "label": "Descripcion", "allowEdit": false},
                    ];
     this.reload();
     this.createForm();
