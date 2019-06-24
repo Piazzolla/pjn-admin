@@ -7,9 +7,20 @@
         </div>
     </div>
      <div *ngIf="loaded">
-        <div class ="row">
-            {{data.content.nombre}}
-        </div>
+        <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form-group">
+            <div  class="form-group">{{id}} </div> 
+            <div  class="form-group">{{data.nombre}}</div> 
+
+            <div  class="form-group">
+                <label for="cuerpoInput"> Modificar Cuerpo </label> 
+                <input type="text"
+                    id="cuerpoInput"
+                    name="cuerpoInput" [(ngModel)]='data.cuerpo'>
+            </div> 
+            <div  class="form-group">{{data.cuerpo}}</div>
+            <button type="ngSubmit" class="btn btn-primary">Enviar</button>
+        </form>
+        {{avisosForm.value | json}}
     </div> <!--loaded-->
 </section>
 
