@@ -20,7 +20,7 @@ export class AbmAvisosComponent {
   data: any; 
   id: string;
   loaded: boolean = false; 
-
+  submitted = false;
   constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService, public activatedRoute: ActivatedRoute,){
   }
   
@@ -42,7 +42,7 @@ export class AbmAvisosComponent {
     console.log("onSubmit!");
     let parameters = [{"key": "id", "value": this.id }];
     this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this,"",parameters);
-  
+    this.submitted = true; 
   }
 
 

@@ -1,4 +1,5 @@
 <!--DataTable With Editing Feature Starts-->
+
 <section id="editing-DataTable" class="mb-3">
     <div class="row text-left valign-middle">
         <div class="col-sm-6">
@@ -7,21 +8,30 @@
         </div>
     </div>
      <div *ngIf="loaded">
+        <div [hidden]="submitted">
         <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form-group">
             <div  class="form-group">id: {{id}} </div> 
 
             <div  class="form-group">
                 <label for="cuerpoInput"> Modificar Título </label> 
                 <input type="text"
-                    id="nombreInput"
-                    name="nombreInput" [(ngModel)]='data.nombre'>
+                    id="nombreInput" required
+                    name="nombreInput" [(ngModel)]='data.nombre' #nombreInput="ngModel">
+                <div [hidden]="nombreInput.valid || nombreInput.pristine"
+                            class="alert alert-danger">
+                    Campo Requerido
+                </div>
             </div> 
             <div  class="form-group">{{data.nombre}}</div>
             <div  class="form-group">
                 <label for="cuerpoInput"> Modificar Cuerpo </label> 
                 <input type="text"
-                    id="cuerpoInput"
-                    name="cuerpoInput" [(ngModel)]='data.cuerpo'>
+                    id="cuerpoInput" required
+                    name="cuerpoInput" [(ngModel)]='data.cuerpo' #cuerpoInput="ngModel">
+                <div [hidden]="cuerpoInput.valid || cuerpoInput.pristine"
+                class="alert alert-danger">
+                    Campo Requerido
+                </div>
             </div> 
             <div  class="form-group">{{data.cuerpo}}</div>
             <div  class="form-group">
@@ -41,7 +51,29 @@
             <button type="ngSubmit" class="btn btn-primary">Enviar</button>
         </form>
         {{avisosForm.value | json}}
-    </div> <!--loaded-->
+        </div><!--submitted-->
+
+<div [hidden]="!submitted">
+  <h2>Información enviada:</h2>
+  <div class="row">
+    <div class="col-xs-3">Titulo</div>
+    <div class="col-xs-9">{{ data.nombre }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Cuerpo</div>
+    <div class="col-xs-9">{{ data.cuerpo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Fecha de vencimiento</div>
+    <div class="col-xs-9">{{ data.fechaBaja }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+</div> <!--loaded-->
+
+
 </section>
 
 
