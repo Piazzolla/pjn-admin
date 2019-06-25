@@ -1,12 +1,13 @@
 <!--DataTable With Editing Feature Starts-->
 
-<section id="editing-DataTable" class="mb-3">
+<!-- section id="editing-DataTable" class="mb-3"-->
+<div class="container">
     <div class="row text-left valign-middle">
         <div class="col-sm-6">
             <div class="content-header">Aviso</div>
             <p class="content-sub-header">Permite editar el aviso</p>
         </div>
-    </div>
+    </div >
      <div *ngIf="loaded">
         <div [hidden]="submitted">
         <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form-group">
@@ -22,7 +23,6 @@
                     Campo Requerido
                 </div>
             </div> 
-            <div  class="form-group">{{data.nombre}}</div>
             <div  class="form-group">
                 <label for="cuerpoInput"> Modificar Cuerpo </label> 
                 <input type="text"
@@ -33,21 +33,18 @@
                     Campo Requerido
                 </div>
             </div> 
-            <div  class="form-group">{{data.cuerpo}}</div>
             <div  class="form-group">
                 <label for="fechaAlta"> Fecha de Alta </label> 
                 <input type="date"
                     id="fechaAlta"
                     name="fechaAlta" [(ngModel)]='data.fechaAlta'>
             </div> 
-            <div  class="form-group">{{data.fechaAlta}}</div>
             <div  class="form-group">
                 <label for="fechaBaja"> Fecha de Vencimiento </label> 
                 <input type="date"
                     id="fechaBaja"
                     name="fechaBaja" [(ngModel)]='data.fechaBaja'>
             </div> 
-            <div  class="form-group">{{data.fechaBaja}}</div>
             <button type="ngSubmit" class="btn btn-primary">Enviar</button>
         </form>
         {{avisosForm.value | json}}
@@ -74,7 +71,8 @@
 </div> <!--loaded-->
 
 
-</section>
+<!--/section-->
+</div> <!-- container -->
 
 
 
