@@ -33,15 +33,17 @@ export class AbmAvisosComponent {
   }
 
 
-  submitForm(){
-  }
-
-
   createForm(){
     //this.regForm = new FormGroup({nombre: new FormControl(""), codigo: new FormControl("")});
   }
 
-
+  onSubmit()
+  {
+    console.log("onSubmit!");
+    let parameters = [{"key": "id", "value": this.id }];
+    this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this,"",parameters);
+  
+  }
 
 
 

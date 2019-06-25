@@ -15,13 +15,15 @@ export class DataService{
     public URL_DEPENDENCIA_ID = "URL_DEPENDENCIA_ID";
     public URL_AVISO_ALL = "URL_AVISO_ALL";
     public URL_AVISO_ID = "URL_AVISO_ID";
- 
+    public URL_AVISO_EDIT = "URL_AVISO_EDIT";
+  
 
     https = [
         {name: "URL_DEPENDENCIA_ALL", url: "dependencia/all", httpOperation: "get"},
         {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"},
         {name: "URL_AVISO_ALL", url: "aviso/all", httpOperation: "get"},
-        {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"}
+        {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"},
+        {name: "URL_AVISO_EDIT", url: "aviso/%id%", httpOperation: "post"}
 
     ]
 
@@ -73,7 +75,8 @@ export class DataService{
         switch(httpOperation.toLowerCase()){
             case "get":
                 this.httpGet(url).subscribe(data => {this.responseOk(component,urlResource, httpOperation, data, ws);});                
-            break;
+                //this.httpGet('./assets/dependata.json').subscribe(data => {this.responseOk(component,urlResource, httpOperation, data, ws);});                
+                 break;
             case "post":
                 this.httpPost(url, body).subscribe(data => {this.responseOk(component,urlResource,httpOperation, data, ws);});
             break;
