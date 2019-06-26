@@ -41,15 +41,23 @@ export class AbmAvisosComponent {
   {
     console.log("onSubmit!");
     let parameters = [{"key": "id", "value": this.id }];
-    this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this,"",parameters);
+
+    //formateo los datos para postearlos
+    for (const prop in this.data.dependencia)
+    {
+      if(prop != 'id')
+        delete this.data.dependencia[prop]; 
+    }
+    this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this.data,this.data,parameters);
     this.submitted = true; 
   }
 
 
 
   procesarData(data:any){
-    return data;
+   return data;
   }
+
   responseOk(httpOperation:string, http: string, data:any, ws:any ){
     //Procesar-Data
     switch(ws.name){

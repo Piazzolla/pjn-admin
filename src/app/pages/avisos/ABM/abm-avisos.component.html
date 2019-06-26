@@ -10,12 +10,12 @@
     </div >
      <div *ngIf="loaded">
         <div [hidden]="submitted">
-        <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form-group">
+        <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form">
             <div  class="form-group">id: {{id}} </div> 
 
             <div  class="form-group">
                 <label for="cuerpoInput"> Modificar Título </label> 
-                <input type="text"
+                <input type="text" class="form-control"
                     id="nombreInput" required
                     name="nombreInput" [(ngModel)]='data.nombre' #nombreInput="ngModel">
                 <div [hidden]="nombreInput.valid || nombreInput.pristine"
@@ -25,7 +25,7 @@
             </div> 
             <div  class="form-group">
                 <label for="cuerpoInput"> Modificar Cuerpo </label> 
-                <input type="text"
+                <input type="text" class="form-control"
                     id="cuerpoInput" required
                     name="cuerpoInput" [(ngModel)]='data.cuerpo' #cuerpoInput="ngModel">
                 <div [hidden]="cuerpoInput.valid || cuerpoInput.pristine"
@@ -35,17 +35,17 @@
             </div> 
             <div  class="form-group">
                 <label for="fechaAlta"> Fecha de Alta </label> 
-                <input type="date"
+                <input type="date" class="form-control"
                     id="fechaAlta"
                     name="fechaAlta" [(ngModel)]='data.fechaAlta'>
             </div> 
             <div  class="form-group">
                 <label for="fechaBaja"> Fecha de Vencimiento </label> 
-                <input type="date"
+                <input type="date" class="form-control"
                     id="fechaBaja"
                     name="fechaBaja" [(ngModel)]='data.fechaBaja'>
             </div> 
-            <button type="ngSubmit" class="btn btn-primary">Enviar</button>
+            <button type="ngSubmit"  class="btn btn-primary">Enviar</button>
         </form>
         {{avisosForm.value | json}}
         </div><!--submitted-->

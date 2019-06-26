@@ -68,9 +68,8 @@ export class DataService{
     httpFunctionCustom(component: any, httpOperation: string, urlResource: string, body: any, ws?:any){
         let urlApi =environment.server;
         let url = urlApi + urlResource;
-
-        console.warn("httpFunction: " + httpOperation + " " + urlResource + " ==> " + url);
-        console.warn("body:", body);        
+        console.warn("httpFunctionCustom: " + httpOperation + " " + urlResource + " ==> " + url);
+        console.warn("httpFunctionCustom body:", body);        
         //environment.server
         switch(httpOperation.toLowerCase()){
             case "get":
@@ -78,7 +77,7 @@ export class DataService{
                 //this.httpGet('./assets/dependata.json').subscribe(data => {this.responseOk(component,urlResource, httpOperation, data, ws);});                
                  break;
             case "post":
-                this.httpPost(url, body).subscribe(data => {this.responseOk(component,urlResource,httpOperation, data, ws);});
+               this.httpPost(url, body).subscribe(data => {this.responseOk(component,urlResource,httpOperation, data, ws);});
             break;
             case "put":
                 this.httpPut(url, body).subscribe(data => {this.responseOk(component,urlResource,httpOperation, data, ws);});
