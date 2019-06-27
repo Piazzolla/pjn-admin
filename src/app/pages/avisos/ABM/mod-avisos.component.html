@@ -52,16 +52,16 @@
 <div [hidden]="!submitted">
   <h2>Información enviada:</h2>
   <div class="row">
-    <div class="col-xs-3">Titulo</div>
-    <div class="col-xs-9">{{ data.nombre }}</div>
+    <div class="col-sm-3">Titulo</div>
+    <div class="col-sm-9">{{ data.nombre }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Cuerpo</div>
-    <div class="col-xs-9">{{ data.cuerpo }}</div>
+    <div class="col-sm-3">Cuerpo</div>
+    <div class="col-sm-9">{{ data.cuerpo }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Fecha de vencimiento</div>
-    <div class="col-xs-9">{{ data.fechaBaja }}</div>
+    <div class="col-sm-3">Fecha de vencimiento</div>
+    <div class="col-sm-9">{{ data.fechaBaja }}</div>
   </div>
   <br>
   <button class="btn btn-primary" (click)="submitted=false">Edit</button>

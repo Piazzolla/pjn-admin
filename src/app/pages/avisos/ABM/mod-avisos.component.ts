@@ -62,8 +62,8 @@ export class AbmAvisosComponent {
     //Procesar-Data
     switch(ws.name){
       case this.dataService.URL_AVISO_ID: 
-        this.loaded =true;
         this.data = this.procesarData(data); 
+        this.loaded =true;
       break; 
     }
   }
