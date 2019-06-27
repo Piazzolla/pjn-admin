@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListadoAvisosComponent } from './listado/listado-avisos.component';
 
 import { AbmAvisosComponent } from './ABM/mod-avisos.component';
+import { AltaAvisosComponent } from './ABM/alta-avisos.component';
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import { AbmAvisosComponent } from './ABM/mod-avisos.component';
   declarations: [
 	ListadoAvisosComponent,
      AbmAvisosComponent,
+     AltaAvisosComponent,
   ]
 })
 export class AvisosModule { }

@@ -5,15 +5,14 @@
     <div class="row text-left valign-middle">
         <div class="col-sm-6">
             <div class="content-header">Aviso</div>
-            <p class="content-sub-header">Permite editar el aviso</p>
+            <p class="content-sub-header">Dar de alta un aviso</p>
         </div>
     </div >
+     <div *ngIf="loaded">
         <div [hidden]="submitted">
-        <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form">
-            <div  class="form-group">id: {{id}} </div> 
-
+        <form #altaAvisosForm="ngForm" (ngSubmit)="onSubmit(altaAvisosForm.value)" class ="form">
             <div  class="form-group">
-                <label for="cuerpoInput"> Modificar Título </label> 
+                <label for="cuerpoInput"> Título </label> 
                 <input type="text" class="form-control"
                     id="nombreInput" required
                     name="nombreInput" [(ngModel)]='data.nombre' #nombreInput="ngModel">
@@ -23,10 +22,10 @@
                 </div>
             </div> 
             <div  class="form-group">
-                <label for="cuerpoInput"> Modificar Cuerpo </label> 
+                <label for="cuerpoInput"> Cuerpo </label> 
                 <input type="text" class="form-control"
                     id="cuerpoInput" required
-                    name="cuerpoInput" [(ngModel)]='data.cuerpo' #cuerpoInput="ngModel">
+                    name="cuerpoInput" [(ngModel)]='data.cuerpo' #spy #cuerpoInput="ngModel">
                 <div [hidden]="cuerpoInput.valid || cuerpoInput.pristine"
                 class="alert alert-danger">
                     Campo Requerido
@@ -44,9 +43,9 @@
                     id="fechaBaja"
                     name="fechaBaja" [(ngModel)]='data.fechaBaja'>
             </div> 
-            <button type="ngSubmit"  class="btn btn-primary">Enviar</button>
+            <button type="ngSubmit" [disabled]="altaAvisosForm.invalid" class="btn btn-primary">Enviar</button>
         </form>
-        {{avisosForm.value | json}}
+        {{altaAvisosForm.value | json}}
         </div><!--submitted-->
 
 <div [hidden]="!submitted">
@@ -67,6 +66,7 @@
   <button class="btn btn-primary" (click)="submitted=false">Edit</button>
 </div>
 
+</div> <!--loaded-->
 
 
 <!--/section-->

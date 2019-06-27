@@ -102,6 +102,12 @@ export class ListadoAvisosComponent {
     this.router.navigate([url]);
   }  
 
+  nuevoAviso()
+  {
+    let url:string = '/aviso/alta/';
+    this.router.navigate([url]);
+  }
+
 
   
   setPage(pageInfo){
