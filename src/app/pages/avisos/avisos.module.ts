@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListadoAvisosComponent } from './listado/listado-avisos.component';
 
-import { AbmAvisosComponent } from './ABM/abm-avisos.component';
+import { AbmAvisosComponent } from './ABM/mod-avisos.component';
 
 @NgModule({
     imports: [

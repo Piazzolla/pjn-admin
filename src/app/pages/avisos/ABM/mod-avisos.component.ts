@@ -12,8 +12,8 @@ declare var require: any;
 // shared/data/company.json
 @Component({
     selector: 'aviso-abm',
-    templateUrl: './abm-avisos.component.html',
-    styleUrls: ['./abm-avisos.component.scss']
+    templateUrl: './mod-avisos.component.html',
+    styleUrls: ['./mod-avisos.component.scss']
 })
 
 export class AbmAvisosComponent {
