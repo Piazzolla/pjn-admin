@@ -28,7 +28,6 @@ export class ListadoAvisosComponent {
   private regForm:FormGroup;
   public findNombre: string="";
 
-
   constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService){
     this.page = {"totalElements": 0};
   }
@@ -36,7 +35,6 @@ export class ListadoAvisosComponent {
 
   ngOnInit(){
     this.dataService.httpFunction(this.dataService.URL_AVISO_ALL,this,"","");
-
     this.Columns = [
                     {"name": "id", "label": "id", "allowEdit": false },
                     {"name": "nombre", "label": "Titulo", "allowEdit": false},
@@ -73,22 +71,24 @@ export class ListadoAvisosComponent {
   }
 
   Confirmar(id: number) {
-    // var self = this; 
-    // swal({
-    //     title: '¿Esta usted seguro que desea eliminar la Dependencia?',
-    //     text: "!No podrá deshacer esta operación!",
-    //     type: 'warning',
-    //     showCancelButton: true,
-    //     confirmButtonColor: '#0CC27E',
-    //     cancelButtonColor: '#FF586B',
-    //     confirmButtonText: 'Eliminar',
-    //     cancelButtonText: "No"
-    // }).then(function (isConfirm) {
-    //     console.error(isConfirm);
-    //     if (isConfirm.value == true) {
-    //        
-    //     }
-    // }).catch(swal.noop);
+    var self = this; 
+    swal({
+         title: '¿Está usted seguro de que desea eliminar el Aviso?',
+         text: "!No podrá deshacer esta operación!",
+         type: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#0CC27E',
+         cancelButtonColor: '#FF586B',
+         confirmButtonText: 'Eliminar',
+         cancelButtonText: "No"
+     }).then(function (isConfirm) {
+         console.error(isConfirm);
+         if (isConfirm.value == true) {
+                this.id = this.activatedRoute.snapshot.paramMap.get('id');
+                let parameters = [{"key": "id", "value": this.id }];
+                this.dataService.httpFunction(this.dataService.URL_AVISO_BAJA,this,"",parameters);
+         }
+     }).catch(swal.noop);
 }
 
 

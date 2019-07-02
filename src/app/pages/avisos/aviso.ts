@@ -4,4 +4,5 @@ export class Aviso {
   cuertpo: string;
   fechaAlta: Date;
   fechaBaja: Date;
+  dependencia: Object;
 }

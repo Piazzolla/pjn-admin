@@ -17,6 +17,7 @@ export class DataService{
     public URL_AVISO_ID = "URL_AVISO_ID";
     public URL_AVISO_EDIT = "URL_AVISO_EDIT";
     public URL_AVISO_NUEVO = "URL_AVISO_NUEVO";
+    public URL_AVISO_BAJA = "URL_AVISO_BAJA";
   
 
     https = [
@@ -24,8 +25,9 @@ export class DataService{
         {name: "URL_DEPENDENCIA_ID", url: "dependencia/%id%", httpOperation: "get"},
         {name: "URL_AVISO_ALL", url: "aviso/all", httpOperation: "get"},
         {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"},
-        {name: "URL_AVISO_EDIT", url: "aviso/%id%", httpOperation: "post"}
-        {name: "URL_AVISO_NUEVO", url: "aviso/new", httpOperation: "post"}
+        {name: "URL_AVISO_EDIT", url: "aviso/%id%", httpOperation: "post"},
+        {name: "URL_AVISO_NUEVO", url: "aviso/new", httpOperation: "post"},
+        {name: "URL_AVISO_BAJA", url: "aviso/del", httpOperation: "post"}
 
     ]
 

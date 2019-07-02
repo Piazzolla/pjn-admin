@@ -27,7 +27,9 @@ export class AltaAvisosComponent {
 
   ngOnInit(){
     this.data = new Aviso();
-    this.createForm();
+    let hoy = new Date().toISOString().split('T')[0];
+    this.data.fechaAlta = new Date(hoy);
+    this.createForm(); 
     this.loaded = true;
   }
 
