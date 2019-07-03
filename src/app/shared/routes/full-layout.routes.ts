@@ -15,6 +15,9 @@ export const Full_ROUTES: Routes = [
      {
      path: 'aviso',
      loadChildren: './pages/avisos/avisos.module#AvisosModule'
+   },
+     {
+     path: 'usuarios',
+     loadChildren: './pages/usuarios/usuarios.module#UsuariosModule'
    }
-
 ];

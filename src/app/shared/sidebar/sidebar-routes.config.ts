@@ -13,6 +13,11 @@ export const ROUTES: RouteInfo[] = [
           { path: '/aviso/listado', title: 'Listado de Avisos ', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
         ]
     },
+    {
+        path: '', title: 'Usuarios', icon: 'ft-users', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: [
+          { path: '/usuarios/busqueda', title: 'Búsqueda de Usuarios ', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        ]
+    },
 
    
 ];
