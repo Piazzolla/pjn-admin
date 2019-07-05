@@ -9,6 +9,7 @@
         </div>
     </div >
      <div *ngIf="loaded">
+
         <div [hidden]="submitted">
         <form #altaAvisosForm="ngForm" (ngSubmit)="onSubmit(altaAvisosForm.value)" class ="form">
             <div  class="form-group">
@@ -36,7 +37,9 @@
                 <label for="fechaAlta"> Fecha de Alta </label> 
                 <div class="input-group">
                     <input class="form-control" placeholder="dd-mm-aaaa" 
-                        name="fechaAlta" [(ngModel)]="data.fechaAlta" ngbDatepicker #d1="ngbDatepicker">
+                        name="fechaAlta" [(ngModel)]="data.fechaAlta" ngbDatepicker
+                        dateFormat="dd-MM-yyyy"
+                        #d1="ngbDatepicker">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button">
                             <i class="fa fa-calendar-o" style="color: blue"></i>
@@ -75,12 +78,15 @@
   </div>
   <div class="row">
     <div class="col-sm-3">Fecha de vencimiento</div>
-    <div class="col-sm-9">{{ data.fechaBaja }}</div>
+    <div class="col-sm-9">{{ data.fechaBaja | json }}</div>
   </div>
 </div> <!-- container -->
   <br>
   <button class="btn btn-primary" (click)="submitted=false">Edit</button>
 </div>
+
+
+
 </div> <!--loaded-->
 
 <!--/section-->
