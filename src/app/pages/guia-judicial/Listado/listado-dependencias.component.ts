@@ -16,6 +16,7 @@ declare var require: any;
     styleUrls: ['./listado-dependencias.component.scss']
 })
 
+
 export class ListadoDependenciasComponent {
    
   editing = {};
@@ -27,7 +28,8 @@ export class ListadoDependenciasComponent {
   public page: any; 
   private regForm:FormGroup;
   public findNombre: string="";
-  public filteredList;
+  rows = [];
+  temp = [];
 
 
   constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService){
@@ -45,6 +47,7 @@ export class ListadoDependenciasComponent {
                    ];
     this.reload();
     this.createForm();
+    this.temp = this.data;
   }
 
 
@@ -108,8 +111,18 @@ export class ListadoDependenciasComponent {
     this.router.navigate([url]);
   }  
 
-updateFilter(filter: string): void {
+updateFilter(event) {
+    const val = event.target.value.toLowerCase();
 
+    // filter our data
+    const temp = this.temp.filter(function(d) {
+      let tmp = d.dependenciaInfo.nombre.toLowerCase().indexOf(val) !== -1 || !val;
+      return tmp;
+    });
+    // update the rows
+    this.data = temp;
+    // Whenever the filter changes, always go back to the first page
+   // this.data.offset = 0;
 }
   
   setPage(pageInfo){
@@ -133,6 +146,7 @@ updateFilter(filter: string): void {
         this.page = data;
         this.data = data.content; 
         this.dataLoaded = true; 
+        this.temp = [...this.data];
       break; 
     }
   }

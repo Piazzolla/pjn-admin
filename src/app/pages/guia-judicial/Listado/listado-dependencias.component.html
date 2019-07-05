@@ -7,7 +7,11 @@
         </div>
     </div>
      <div *ngIf="loaded">
-        <input type='text' placeholder='Filtrar' (keyup)='updateFilter($event)' />
+              <input
+                type="text"
+                style="padding:8px;margin:15px auto;width:30%;"
+                placeholder="Filtrar"
+                (keyup)="updateFilter($event)"/>
         <div class="row">
             <div class="col-12">
                 <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [limit]="10"    [columnMode]="'force'" 
