@@ -27,6 +27,7 @@ export class ListadoDependenciasComponent {
   public page: any; 
   private regForm:FormGroup;
   public findNombre: string="";
+  public filteredList;
 
 
   constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService){
@@ -102,7 +103,14 @@ export class ListadoDependenciasComponent {
     this.router.navigate([url]);
   }  
 
+  user(row){
+    let url:string = '/dependencia/user/' + row.id;
+    this.router.navigate([url]);
+  }  
 
+updateFilter(filter: string): void {
+
+}
   
   setPage(pageInfo){
     this.dataLoaded = false; 

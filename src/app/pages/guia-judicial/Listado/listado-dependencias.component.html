@@ -7,11 +7,13 @@
         </div>
     </div>
      <div *ngIf="loaded">
+        <input type='text' placeholder='Filtrar' (keyup)='updateFilter($event)' />
         <div class="row">
             <div class="col-12">
-                <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [limit]="pageSizeDefault" [columnMode]="'force'" [footerHeight]="50"
-                    [rowHeight]="'auto'" [rows]="data"
-                    [externalPaging]="true"
+                <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [limit]="10"    [columnMode]="'force'" 
+                    [footerHeight]="50"
+                    [rowHeight]="'auto'" 
+                    [rows]="data"
                     [count]="page.totalElements"
                     [offset]="page.number"
                     [limit]="page.size"
@@ -26,6 +28,10 @@
                             <button md-icon-button (click)="edit(row)">
                                     <i class="fa fa-edit" style="color: blue"></i>
                             </button>
+                            <button md-icon-button (click)="user(row)">
+                                    <i class="fa fa-user" style="color: blue"></i>
+                            </button>
+
                         </ng-template>
                     </ngx-datatable-column>
                     
