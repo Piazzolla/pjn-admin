@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ListadoDependenciasComponent } from './Listado/listado-dependencias.component';
 import { AbmDependenciaComponent } from './ABM/abm-dependencia.component';
+import { IntegrantesComponent } from './integrantes/integrantes.component';
+
 
 const routes: Routes = [
   {
@@ -20,6 +22,13 @@ const routes: Routes = [
         component: AbmDependenciaComponent,
         data: {
           title: 'Abm Dependencia'
+        }
+      },
+      {
+        path: 'integrantes/:id',
+        component: IntegrantesComponent,
+        data: {
+          title: 'Integrantes de Dependencia'
         }
       },      
     ]

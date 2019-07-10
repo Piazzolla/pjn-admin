@@ -107,7 +107,7 @@ export class ListadoDependenciasComponent {
   }  
 
   user(row){
-    let url:string = '/dependencia/user/' + row.id;
+    let url:string = '/dependencia/integrantes/' + row.id;
     this.router.navigate([url]);
   }  
 
