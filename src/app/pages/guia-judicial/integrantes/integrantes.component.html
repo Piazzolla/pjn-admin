@@ -1,3 +1,53 @@
-<p>
-  integrantes works!
-</p>
+<!--DataTable With Editing Feature Starts-->
+<section id="editing-DataTable" class="mb-3">
+    <div class="row text-left valign-middle">
+        <div class="col-sm-6">
+            <div class="content-header">Integrantes de la Dependencia </div>
+            <p class="content-sub-header"></p>
+        </div>
+    </div>
+    {{loaded}}
+     <div *ngIf="loaded">
+              <!--input
+                type="text"
+                style="padding:8px;margin:15px auto;width:30%;"
+                placeholder="Filtrar"
+                (keyup)="updateFilter($event)"/-->
+        <div class="row">
+            <div class="col-12">
+                <ngx-datatable class="bootstrap" [rows]="data1">
+                    
+<!--                    <ngx-datatable-column name="-"  prop=" ">
+                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                            <button md-icon-button (click)="delete(row)">
+                                <i class="fa fa-trash-o" style="color: red"></i>
+                            </button>
+                            <button md-icon-button (click)="edit(row)">
+                                    <i class="fa fa-edit" style="color: blue"></i>
+                            </button>
+                            <button md-icon-button (click)="user(row)">
+                                    <i class="fa fa-user" style="color: blue"></i>
+                            </button>
+
+                        </ng-template>
+                    </ngx-datatable-column> -->
+                    
+<!--                     <ngx-datatable-column name="{{col.label}}" *ngFor="let col of Columns"  prop="{{col.name}}">
+                            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                <span title="" [ngStyle]="getStyleCellValue(col, value)" >
+                                        {{getDataCellValue(col, value)}}
+                                </span>
+                            </ng-template>
+                    </ngx-datatable-column> -->
+                 </ngx-datatable>
+            </div>
+        </div>
+        <div class ="row">
+
+        </div>
+    </div> <!--loaded-->
+<!--DataTable With Editing Feature Ends-->
+</section>
+
+
+
