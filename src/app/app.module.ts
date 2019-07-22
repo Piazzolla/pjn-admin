@@ -25,6 +25,7 @@ import * as $ from 'jquery';
 
 //Services
 import { DataService } from './services/data.services';
+import { DependenciaIntegrantesService } from './services/dependencia-integrantes.service';
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     providers: [
         DataService,
+        DependenciaIntegrantesService,
         AuthService,
         AuthGuard,
         DragulaService

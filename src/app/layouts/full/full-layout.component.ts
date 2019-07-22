@@ -26,11 +26,7 @@ export class FullLayoutComponent implements OnInit {
         //sidebar toggle event listner
         this.elementRef.nativeElement.querySelector('#sidebarToggle')
             .addEventListener('click', this.onClick.bind(this));
-        //customizer events
-        this.elementRef.nativeElement.querySelector('#cz-compact-menu')
-            .addEventListener('click', this.onClick.bind(this));
-        this.elementRef.nativeElement.querySelector('#cz-sidebar-width')
-            .addEventListener('click', this.onClick.bind(this));
+
     }
 
     onClick(event) {

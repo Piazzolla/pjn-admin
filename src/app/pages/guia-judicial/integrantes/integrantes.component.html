@@ -7,7 +7,7 @@
         </div>
     </div>
     {{loaded}}
-     <div *ngIf="loaded">
+     <div *ngIf="!loading && data1">
               <!--input
                 type="text"
                 style="padding:8px;margin:15px auto;width:30%;"
@@ -15,9 +15,18 @@
                 (keyup)="updateFilter($event)"/-->
         <div class="row">
             <div class="col-12">
-                <ngx-datatable class="bootstrap" [rows]="data1">
+                <ngx-datatable class="bootstrap" [headerHeight]="50" [limit]=10 
+                		[columnMode]="'force'" 
+                		[footerHeight]="50"
+                		[count]="page.totalElements"
+                		[limit]="page.size"
+                		(page)='setPage($event)'
+                		[rows]="data1" 
+		                [columns]="columns"
+		                loadingIndicator="!dataLoaded">
+
                     
-<!--                    <ngx-datatable-column name="-"  prop=" ">
+                    <ngx-datatable-column name="-"  prop=" ">
                          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                             <button md-icon-button (click)="delete(row)">
                                 <i class="fa fa-trash-o" style="color: red"></i>
@@ -30,15 +39,15 @@
                             </button>
 
                         </ng-template>
-                    </ngx-datatable-column> -->
+                    </ngx-datatable-column>  
                     
-<!--                     <ngx-datatable-column name="{{col.label}}" *ngFor="let col of Columns"  prop="{{col.name}}">
+                     <ngx-datatable-column name="{{col.label}}" *ngFor="let col of columns"  prop="{{col.name}}">
                             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                                 <span title="" [ngStyle]="getStyleCellValue(col, value)" >
                                         {{getDataCellValue(col, value)}}
                                 </span>
                             </ng-template>
-                    </ngx-datatable-column> -->
+                    </ngx-datatable-column>
                  </ngx-datatable>
             </div>
         </div>
