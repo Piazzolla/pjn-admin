@@ -5,7 +5,7 @@ import swal from 'sweetalert2';
 import { AuthService } from '../../../shared/auth/auth.service';
 import { hexToRgb } from '@swimlane/ngx-charts/release/utils';
 import { FormControl, FormGroup, FormBuilder, Validator, Validators,ReactiveFormsModule } from "@angular/forms";
-import { Aviso } from '../aviso';
+import { Aviso } from '../../../models/aviso';
 
 declare var require: any;
 // const data: any = require('../../../shared/data/company.json');
