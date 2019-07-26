@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DependenciaIntegrantesService {
 
-  private url = "http://localhost:8081/api/dependencia/integrantes/";
+  private url = "http://localhost:8081/api/avisos/";
 
   constructor(protected http: HttpClient) { }
 
@@ -16,7 +16,9 @@ export class DependenciaIntegrantesService {
     return this.http.get<any>(this.url+"all");
   }
 
-      public findId(id:any): Observable<any>  {
+    public findId(id:any): Observable<any>  {
     return this.http.get<any>(this.url+id);
   }
+
+
 }

@@ -28,7 +28,7 @@ export class DataService{
         {name: "URL_AVISO_ID", url: "aviso/%id%", httpOperation: "get"},
         {name: "URL_AVISO_EDIT", url: "aviso/%id%", httpOperation: "post"},
         {name: "URL_AVISO_NUEVO", url: "aviso/new", httpOperation: "post"},
-        {name: "URL_AVISO_BAJA", url: "aviso/del", httpOperation: "post"}
+        {name: "URL_AVISO_BAJA", url: "aviso/del", httpOperation: "post"},
         {name: "URL_INTEGRANTES_DEPEND_ID", url: "dependencia/integrantes/%id%", httpOperation: "get"}
 
     ]
