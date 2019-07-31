@@ -24,7 +24,13 @@
                 		[rows]="data1" 
 		                [columns]="columns"
 		                loadingIndicator="!dataLoaded">
-
+                     <ngx-datatable-column name="{{col.label}}" *ngFor="let col of columns"  prop="{{col.name}}">
+                            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                <span title="" [ngStyle]="getStyleCellValue(col, value)" >
+                                        {{getDataCellValue(col, value)}}
+                                </span>
+                            </ng-template>
+                    </ngx-datatable-column>
                     
                     <ngx-datatable-column name="-"  prop=" ">
                          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
@@ -34,23 +40,17 @@
                             <button md-icon-button (click)="edit(row)">
                                     <i class="fa fa-edit" style="color: blue"></i>
                             </button>
-                            <button md-icon-button (click)="edit(row)">
+                            <button md-icon-button (click)="downUser(row)">
                                     <i class="fa fa-arrow-circle-down" style="color: blue"></i>
                             </button>
-                            <button md-icon-button (click)="user(row)">
+                            <button md-icon-button (click)="upUser(row)">
                                     <i class="fa fa-arrow-circle-up" style="color: blue"></i>
                             </button>
 
                         </ng-template>
                     </ngx-datatable-column>  
                     
-                     <ngx-datatable-column name="{{col.label}}" *ngFor="let col of columns"  prop="{{col.name}}">
-                            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                                <span title="" [ngStyle]="getStyleCellValue(col, value)" >
-                                        {{getDataCellValue(col, value)}}
-                                </span>
-                            </ng-template>
-                    </ngx-datatable-column>
+
                  </ngx-datatable>
             </div>
         </div>

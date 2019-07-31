@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ListadoAvisosComponent } from './listado/listado-avisos.component';
-import { AbmAvisosComponent } from './ABM/mod-avisos.component';
+import { ModAvisosComponent } from './ABM/mod-avisos.component';
 import { AltaAvisosComponent } from './ABM/alta-avisos.component';
 
 const routes: Routes = [
@@ -18,9 +18,9 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id',
-        component: AbmAvisosComponent,
+        component: ModAvisosComponent,
         data: {
-          title: 'Abm Aviso'
+          title: 'Modificar Aviso'
         }
       },   
       {

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DependenciaIntegrantesService {
+export class AvisosService {
 
   private url = "http://localhost:8081/api/avisos/";
 
@@ -18,6 +18,10 @@ export class DependenciaIntegrantesService {
 
     public findId(id:any): Observable<any>  {
     return this.http.get<any>(this.url+id);
+  }
+
+    public editAviso(id:any, data:any): Observable<any>  {
+    return this.http.post<any>(this.url+id, data);
   }
 
 

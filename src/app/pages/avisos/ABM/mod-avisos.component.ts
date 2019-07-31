@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../../services/data.services';
+import { AvisosService } from '../../../services/avisos.service';
+
 import { Router, Route,ActivatedRoute, ParamMap  } from '@angular/router';
 import swal from 'sweetalert2';
 import { AuthService } from '../../../shared/auth/auth.service';
@@ -16,19 +18,21 @@ declare var require: any;
     styleUrls: ['./mod-avisos.component.scss']
 })
 
-export class AbmAvisosComponent {
+export class ModAvisosComponent {
   data: any; 
   id: string;
   loaded: boolean = false; 
-  submitted = false;
-  constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService, public activatedRoute: ActivatedRoute,){
+  submitted: boolean = false;
+  constructor(public avisosService: AvisosService, public router: Router, public activatedRoute: ActivatedRoute, public auth: AuthService){
   }
   
 
   ngOnInit(){
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("ID: " + this.id);
     let parameters = [{"key": "id", "value": this.id }];
-    this.dataService.httpFunction(this.dataService.URL_AVISO_ID,this,"",parameters);
+  //  this.dataService.httpFunction(this.dataService.URL_AVISO_ID,this,"",parameters);
+    this.data = this.avisosService.findId(this.id);
     this.createForm();
   }
 
@@ -48,7 +52,8 @@ export class AbmAvisosComponent {
       if(prop != 'id')
         delete this.data.dependencia[prop]; 
     }
-    this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this.data,this.data,parameters);
+//    this.dataService.httpFunction(this.dataService.URL_AVISO_EDIT,this.data,this.data,parameters);
+    this.avisosService.editAviso(parameters, this.data);
     this.submitted = true; 
   }
 
@@ -61,10 +66,10 @@ export class AbmAvisosComponent {
   responseOk(httpOperation:string, http: string, data:any, ws:any ){
     //Procesar-Data
     switch(ws.name){
-      case this.dataService.URL_AVISO_ID: 
-        this.data = this.procesarData(data); 
-        this.loaded =true;
-      break; 
+ //     case this.dataService.URL_AVISO_ID: 
+ //       this.data = this.procesarData(data); 
+ //       this.loaded =true;
+ //     break; 
     }
   }
 }

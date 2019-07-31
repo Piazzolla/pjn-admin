@@ -8,6 +8,7 @@
             <p class="content-sub-header">Permite editar el aviso</p>
         </div>
     </div >
+   submitted:  {{this.submitted}}
         <div [hidden]="submitted">
         <form #avisosForm="ngForm" (ngSubmit)="onSubmit(avisosForm.value)" class ="form">
             <div  class="form-group">id: {{id}} </div> 
