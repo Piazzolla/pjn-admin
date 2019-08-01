@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DependenciaIntegrantesService {
+export class DependenciaService {
 
   private url = "http://localhost:8081/api/dependencia/";
 

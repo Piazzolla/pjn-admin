@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../../services/data.services';
+//import { DataService } from '../../../services/data.services';
 import { AvisosService } from '../../../services/avisos.service';
-
+import { Aviso } from '../../../models/aviso.model';
 import { Router, Route,ActivatedRoute, ParamMap  } from '@angular/router';
 import swal from 'sweetalert2';
 import { AuthService } from '../../../shared/auth/auth.service';

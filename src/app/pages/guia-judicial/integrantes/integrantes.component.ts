@@ -5,7 +5,6 @@ import { Router, Route,ActivatedRoute, ParamMap  } from '@angular/router';
 import { AuthService } from '../../../shared/auth/auth.service';
 import { FormControl, FormGroup, FormBuilder, Validator, Validators,ReactiveFormsModule } from "@angular/forms";
 import { hexToRgb } from '@swimlane/ngx-charts/release/utils';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'dependencia-integrantes',
@@ -61,6 +60,22 @@ export class IntegrantesComponent implements OnInit {
 
       }
       );
+
+  }
+
+  upUser(){
+
+  }
+
+  downUser(){
+
+  }
+
+  edit(){
+
+  }
+
+  delete(){
 
   }
 

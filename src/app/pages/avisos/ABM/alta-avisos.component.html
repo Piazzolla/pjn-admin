@@ -9,7 +9,7 @@
         </div>
     </div >
      <div *ngIf="loaded">
-
+{{submitted}}
         <div [hidden]="submitted">
         <form #altaAvisosForm="ngForm" (ngSubmit)="onSubmit(altaAvisosForm.value)" class ="form">
             <div  class="form-group">
@@ -36,7 +36,7 @@
             <div  class="form-group">
                 <label for="fechaAlta"> Fecha de Alta </label> 
                 <div class="input-group">
-                    <input class="form-control" placeholder="dd-mm-aaaa" 
+                    <input class="form-control" placeholder={{data.fechaAlta}}
                         name="fechaAlta" [(ngModel)]="data.fechaAlta" ngbDatepicker
                         dateFormat="dd-MM-yyyy"
                         #d1="ngbDatepicker">
@@ -50,7 +50,7 @@
             <div  class="form-group">
                 <label for="fechaBaja"> Fecha de Vencimiento </label> 
                 <div class="input-group">
-                    <input class="form-control" placeholder="dd-mm-aaaa" 
+                    <input class="form-control" placeholder="dd-mm-aaaa" dateFormat="dd-MM-yyyy"
                         name="fechaBaja" [(ngModel)]="data.fechaBaja" ngbDatepicker #d2="ngbDatepicker">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../../services/data.services';
+import { DependenciaService } from '../../../services/dependencia.service';
+
 import { Router, Route,ActivatedRoute, ParamMap  } from '@angular/router';
 import swal from 'sweetalert2';
 import { AuthService } from '../../../shared/auth/auth.service';
@@ -38,8 +40,8 @@ export class ListadoDependenciasComponent {
   
 
   ngOnInit(){
-    this.dataService.httpFunction(this.dataService.URL_DEPENDENCIA_ALL,this,"","");
 
+    this.dataService.httpFunction(this.dataService.URL_DEPENDENCIA_ALL,this,"");
     this.Columns = [
                     {"name": "id", "label": "id", "allowEdit": false },
                     {"name": "dependenciaInfo.nombre", "label": "Dependencia", "allowEdit": false},
@@ -77,22 +79,22 @@ export class ListadoDependenciasComponent {
   }
 
   Confirmar(id: number) {
-    // var self = this; 
-    // swal({
-    //     title: '¿Esta usted seguro que desea eliminar la Dependencia?',
-    //     text: "!No podrá deshacer esta operación!",
-    //     type: 'warning',
-    //     showCancelButton: true,
-    //     confirmButtonColor: '#0CC27E',
-    //     cancelButtonColor: '#FF586B',
-    //     confirmButtonText: 'Eliminar',
-    //     cancelButtonText: "No"
-    // }).then(function (isConfirm) {
-    //     console.error(isConfirm);
-    //     if (isConfirm.value == true) {
-    //        
-    //     }
-    // }).catch(swal.noop);
+    var self = this; 
+    swal({
+        title: '¿Esta usted seguro que desea eliminar la Dependencia?',
+        text: "!No podrá deshacer esta operación!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#0CC27E',
+        cancelButtonColor: '#FF586B',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: "No"
+    }).then(function (isConfirm) {
+        console.error(isConfirm);
+        if (isConfirm.value == true) {
+           
+        }
+    }).catch(swal.noop);
 }
 
 
@@ -129,6 +131,7 @@ updateFilter(event) {
     this.dataLoaded = false; 
     let body = {"page": pageInfo.offset, "size": this.pageSizeDefault }
     this.dataService.httpFunction(this.dataService.URL_DEPENDENCIA_ALL,this,body,"");
+
   }
 
   reload(){

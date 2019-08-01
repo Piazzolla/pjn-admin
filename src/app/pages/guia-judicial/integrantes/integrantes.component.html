@@ -15,11 +15,12 @@
                 (keyup)="updateFilter($event)"/-->
         <div class="row">
             <div class="col-12">
-                <ngx-datatable class="bootstrap" [headerHeight]="50" [limit]=10 
+                <ngx-datatable class="bootstrap" 
+                        [headerHeight]="50" 
+                        [limit]=10 
                 		[columnMode]="'force'" 
                 		[footerHeight]="50"
                 		[count]="page.totalElements"
-                		[limit]="page.size"
                 		(page)='setPage($event)'
                 		[rows]="data1" 
 		                [columns]="columns"

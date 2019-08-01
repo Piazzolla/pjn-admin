@@ -1,4 +1,4 @@
-export interface Aviso {
+export class Aviso {
   id: number;
   titulo: string;
   cuertpo: string;

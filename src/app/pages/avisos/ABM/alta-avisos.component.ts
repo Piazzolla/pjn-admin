@@ -26,13 +26,20 @@ export class AltaAvisosComponent {
   
 
   ngOnInit(){
-    this.data;
-    let hoy = new Date().toISOString().split('T')[0];
-    this.data.fechaAlta = new Date(hoy);
+    this.data = new Aviso();
+    let hoy = this.getFormattedDate() ;
+    this.data.fechaAlta = new Date(hoy); //TODO: corregir esto
     this.createForm(); 
     this.loaded = true;
   }
 
+ getFormattedDate() {
+    var todayTime = new Date();
+    var month = todayTime .getMonth() + 1;
+    var day = todayTime .getDate();
+    var year = todayTime .getFullYear();
+    return day + "-" + month + "-" + year;
+}
 
   createForm(){
     //this.regForm = new FormGroup({nombre: new FormControl(""), codigo: new FormControl("")});
