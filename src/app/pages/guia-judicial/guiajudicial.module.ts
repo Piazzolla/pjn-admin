@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListadoDependenciasComponent } from './Listado/listado-dependencias.component';
 import { AbmDependenciaComponent } from './ABM/abm-dependencia.component';
 import { IntegrantesComponent } from './integrantes/integrantes.component';
+import { EditIntegranteComponent } from './integrantes/edit-integrante/edit-integrante.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { IntegrantesComponent } from './integrantes/integrantes.component';
         ListadoDependenciasComponent,
         AbmDependenciaComponent,
         IntegrantesComponent,
+        EditIntegranteComponent,
      ]
 })
 export class GuiaJudicialModule { }

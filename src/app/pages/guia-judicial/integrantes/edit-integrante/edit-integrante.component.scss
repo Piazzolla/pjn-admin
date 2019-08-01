@@ -1,0 +1,75 @@
+label {
+    display:block;
+}
+
+
+.btn-primary {
+        color: #fff !important;
+}
+
+:root {
+    --color-primary: #2eec96;
+    --selection-color: #abffd9;
+    --unitless-max-font-size: 18;
+}
+
+body {
+    padding: 2rem 1rem;
+    background-color: #2eec96;
+}
+
+form {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+form h1 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-lighter);
+    font-size: var(--font-size-3);
+    text-align: center;
+}
+
+input {
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.75rem;
+}
+
+.help-text {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--font-size-small);
+}
+
+input:placeholder-shown + label {
+    opacity: 0;
+    transform: translateY(1rem);
+}
+
+.has-dynamic-label {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.has-dynamic-label label {
+    position: absolute;
+    top: 0;
+    font-size: var(--font-size-small);
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease-out;
+}
+
+
+input:read-only {
+    border-color: var(--gray-lighter) !important;
+    color: var(--gray);
+    cursor: not-allowed;
+}
+

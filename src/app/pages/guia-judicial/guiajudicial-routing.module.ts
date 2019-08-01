@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListadoDependenciasComponent } from './Listado/listado-dependencias.component';
 import { AbmDependenciaComponent } from './ABM/abm-dependencia.component';
 import { IntegrantesComponent } from './integrantes/integrantes.component';
+import { EditIntegranteComponent } from './integrantes/edit-integrante/edit-integrante.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,14 @@ const routes: Routes = [
           title: 'Integrantes de Dependencia'
         }
       },      
+      {
+        path: 'integrantes/edit/:id',
+        component: EditIntegranteComponent,
+        data: {
+          title: 'Editar Integrante'
+        }
+      },      
+
     ]
   },
 ];

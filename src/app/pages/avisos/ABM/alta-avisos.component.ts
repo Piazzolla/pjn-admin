@@ -31,7 +31,7 @@ export class AltaAvisosComponent {
     this.data.fechaAlta = new Date(hoy); //TODO: corregir esto
     this.createForm(); 
     this.loaded = true;
-  }
+    }
 
  getFormattedDate() {
     var todayTime = new Date();

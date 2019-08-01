@@ -19,4 +19,14 @@ export class DependenciaIntegrantesService {
       public findId(id:any): Observable<any>  {
     return this.http.get<any>(this.url+id);
   }
+
+  public downUser(id:any): Observable<any> {
+   return this.http.get<any>(this.url+ "down/" + id);
+  }
+
+  public upUser(id:any): Observable<any> {
+   return this.http.get<any>(this.url+ "up/" + id);
+  }
+
+
 }

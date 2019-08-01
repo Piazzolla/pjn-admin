@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../services/data.services';
+//import { DataService } from '../../../services/data.services';
 import { DependenciaIntegrantesService } from '../../../services/dependencia-integrantes.service';
 import { Router, Route,ActivatedRoute, ParamMap  } from '@angular/router';
 import { AuthService } from '../../../shared/auth/auth.service';
@@ -22,7 +22,7 @@ export class IntegrantesComponent implements OnInit {
   data1 = [];
   id: string;
 
-  constructor(public dataService: DataService, public router: Router, public route: ActivatedRoute, public auth: AuthService, private depIntService: DependenciaIntegrantesService){
+  constructor(public router: Router, public route: ActivatedRoute, public auth: AuthService, private depIntService: DependenciaIntegrantesService){
     this.page = {"totalElements": 0};
 
   }
@@ -32,7 +32,6 @@ export class IntegrantesComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     let parameters = [{"key": "id", "value": this.id }];
     // this.dataService.httpFunction(this.dataService.URL_INTEGRANTES_DEPEND_ID,this,"",parameters);
-
 
     this.loadData();
     this.columns = [
@@ -57,25 +56,26 @@ export class IntegrantesComponent implements OnInit {
       response => {
         this.data1 = response.content;
         this.loading = false;
-
       }
       );
 
   }
 
-  upUser(){
+  upUser(row:any){
+    this.depIntService.upUser(row.id);
+  }
+
+  downUser(row:any){
+    this.depIntService.downUser(row.id);
 
   }
 
-  downUser(){
-
+  edit(row:any){
+    let url:string = '/dependencia/integrantes/edit/' + row.id;
+    this.router.navigate([url]);
   }
 
-  edit(){
-
-  }
-
-  delete(){
+  delete(row:any){
 
   }
 
@@ -103,13 +103,13 @@ export class IntegrantesComponent implements OnInit {
     return data;
   }
   responseOk(httpOperation:string, http: string, data:any, ws:any ){
-    //Procesar-Data
-    switch(ws.name){
-      case this.dataService.URL_INTEGRANTES_DEPEND_ID: 
-        this.data1 = this.procesarData(data); 
-        console.log("THIS.DATA: " + JSON.stringify(this.data1));
-        this.loaded=true;
-      break; 
-    }
+    // Procesar-Data
+    // switch(ws.name){
+    //   case this.dataService.URL_INTEGRANTES_DEPEND_ID: 
+    //     this.data1 = this.procesarData(data); 
+    //     console.log("THIS.DATA: " + JSON.stringify(this.data1));
+    //     this.loaded=true;
+    //   break; 
+    // }
   }
 }

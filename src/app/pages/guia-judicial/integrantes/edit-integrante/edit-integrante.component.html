@@ -1,0 +1,71 @@
+<!--DataTable With Editing Feature Starts-->
+
+<!-- section id="editing-DataTable" class="mb-3"-->
+<div class="container">
+    <div class="row text-left valign-middle">
+        <div class="col-sm-6">
+            <div class="content-header">Integrantes</div>
+            <p class="content-sub-header">Editar Integrante</p>
+        </div>
+    </div >
+submitted: {{submitted}}
+loading: {{loading}}
+     <div *ngIf="!loading">
+        <div [hidden]="submitted">
+        <form #altaAvisosForm="ngForm" (ngSubmit)="onSubmit(altaAvisosForm.value)" class ="form">
+            <div  class="form-group">
+                <label for="cuerpoInput"> Apellido y nombre: </label> 
+
+ -->            </div> 
+            <div  class="form-group">
+                <label for="cuerpoInput"> Cargo </label> 
+            </div> 
+
+            <div  class="form-group">
+                <label for="fechaAlta"> Domicilio </label> 
+                <div class="input-group">
+                    <input class="form-control" placeholder={{data.fechaAlta}}
+                        name="fechaAlta" [(ngModel)]="data.fechaAlta" ngbDatepicker
+                        dateFormat="dd-MM-yyyy"
+                        #d1="ngbDatepicker">
+                </div>
+            </div>
+            <div  class="form-group">
+                <label for="fechaBaja"> Piso - Dto. - Oficina: </label> 
+                <div class="input-group">
+                    <input class="form-control" placeholder="dd-mm-aaaa" dateFormat="dd-MM-yyyy"
+                        name="fechaBaja" [(ngModel)]="data.fechaBaja" ngbDatepicker #d2="ngbDatepicker">
+                 </div>
+            </div>
+
+            <button type="ngSubmit" [disabled]="altaAvisosForm.invalid" class="btn btn-primary">Enviar</button>
+        </form>
+        {{altaAvisosForm.value | json}}
+        </div><!--submitted-->
+
+<div [hidden]="!submitted">
+  <h2>Información enviada:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">Titulo</div>
+    <div class="col-sm-9">{{ data.nombre }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">Cuerpo</div>
+    <div class="col-sm-9">{{ data.cuerpo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">Fecha de vencimiento</div>
+    <div class="col-sm-9">{{ data.fechaBaja | json }}</div>
+  </div>
+</div> <!-- container -->
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+
+
+</div> <!--loaded-->
+
+<!--/section-->
+</div> <!-- container -->
