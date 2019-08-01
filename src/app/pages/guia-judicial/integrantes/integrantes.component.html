@@ -6,7 +6,6 @@
             <p class="content-sub-header"></p>
         </div>
     </div>
-    {{loaded}}
      <div *ngIf="!loading && data1">
               <!--input
                 type="text"
@@ -20,6 +19,7 @@
                         [limit]=10 
                 		[columnMode]="'force'" 
                 		[footerHeight]="50"
+                        [rowHeight]="'auto'" 
                 		[count]="page.totalElements"
                 		(page)='setPage($event)'
                 		[rows]="data1" 
